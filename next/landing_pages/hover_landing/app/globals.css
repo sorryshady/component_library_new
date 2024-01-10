@@ -3,7 +3,7 @@
   --secondary: #212121;
   --border: 1px solid #21212157;
 
-  --ease: cubic-bezier(0.255, 0.655, 0.02, 995);
+  --ease: cubic-bezier(0.255, 0.655, 0.02, 0.995);
   --transition-width: width 0.64s var(--ease);
   --transition-opacity: opacity 1.2s var(--ease);
   --transition-transform: transform 1.2s var(--ease);
@@ -76,9 +76,9 @@ a {
   gap: 0.6rem;
   color: var(--primary);
 }
-body {
+/* body {
   background-color: #111111 !important;
-}
+} */
 
 @media (min-width: 1921px) {
   html {

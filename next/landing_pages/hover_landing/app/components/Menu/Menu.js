@@ -23,7 +23,7 @@ const MenuList = ({ data }) => {
     <div className={styles.menu_list}>
       {data.map((item) => {
         return (
-          <div key={item.title} className={styles.menu_list_item}>
+          <div key={item.id} className={styles.menu_list_item}>
             <a href={item.link}>{item.title}</a>
           </div>
         )

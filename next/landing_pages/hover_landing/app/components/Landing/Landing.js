@@ -1,36 +1,102 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './Landing.module.scss'
+import gsap from 'gsap'
 import Image from 'next/image'
 import { sectionData } from './section_data'
 import Menu from '../Menu/Menu'
 const Landing = () => {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [open, setOpen] = useState(false)
-  const mainRef = useRef(null)
+  const [toggle, setToggle] = useState(false)
+  const menuRef = useRef(null)
+  const landing = useRef(null)
+  const tl = useRef()
+
+  useEffect(() => {
+    const menu = menuRef.current
+    const links = gsap.utils.toArray('.link')
+    const menuSection = gsap.utils.toArray('.menu_list_ref')
+
+    gsap.set(landing.current, { x: 0 })
+    gsap.set(menu, { pointerEvents: 'none', autoAlpha: 0 })
+    gsap.set(menuSection, { autoAlpha: 0 })
+    gsap.set(links, { x: '-100%' })
+
+    tl.current = gsap.timeline({
+      paused: true,
+      defaults: {
+        duration: 0.92,
+        ease: 'expo.inOut',
+      },
+    })
+
+    tl.current
+      .to(
+        menu,
+        {
+          autoAlpha: 1,
+          stagger: 0.02,
+          pointerEvents: 'auto',
+        },
+        0
+      )
+      .to(
+        menuSection,
+        {
+          autoAlpha: 1,
+        },
+        0.08
+      )
+      .to(
+        links,
+        {
+          x: 0,
+          stagger: 1,
+        },
+        0
+      )
+
+    tl.current
+      .to(
+        landing.current,
+        {
+          x: '-50rem',
+        },
+        0
+      )
+      .to('.header', { autoAlpha: 0 }, 0)
+      .to(
+        'body',
+        {
+          backgroundColor: '#111111',
+          overflow: 'hidden',
+          pointerEvents: 'none',
+        },
+        0
+      )
+  }, [])
+  useEffect(() => {
+    toggle ? tl.current.play() : tl.current.reverse()
+  }, [toggle])
 
   const handleHover = (index) => {
     setActiveIndex(index)
   }
-  const handleMenuOpen = () => {
-    setOpen(!open)
-  }
 
   return (
     <>
-      <Menu
-        menuOpen={open}
-        handleMenu={handleMenuOpen}
-        mainContainerRef={mainRef}
-      />
-      <div className={styles.main} ref={mainRef}>
+      <Menu handleOpen={setToggle} menuRef={menuRef} />
+      <div className={styles.main} ref={landing}>
         <div className={styles.section}>
           <div className={styles.section_header}>
-            <div>
+            <div className='header'>
               <div>ArchitExpanse</div>
               <div className='--desktop'></div>
               <div className='--desktop'></div>
-              <div className={styles.menu_open} onClick={handleMenuOpen}>
+              <div
+                className={`btn_open ${styles.menu_open}`}
+                onClick={() => setToggle(true)}
+              >
                 <p>&#x2014;</p>
                 <p>&#x2014;</p>
               </div>

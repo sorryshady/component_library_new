@@ -15,11 +15,9 @@ const Landing = () => {
   useEffect(() => {
     const menu = menuRef.current
     const links = gsap.utils.toArray('.link')
-    const menuSection = gsap.utils.toArray('.menu_list_ref')
 
     gsap.set(landing.current, { x: 0 })
     gsap.set(menu, { pointerEvents: 'none', autoAlpha: 0 })
-    gsap.set(menuSection, { autoAlpha: 0 })
     gsap.set(links, { x: '-100%' })
 
     tl.current = gsap.timeline({
@@ -41,17 +39,10 @@ const Landing = () => {
         0
       )
       .to(
-        menuSection,
-        {
-          autoAlpha: 1,
-        },
-        0.08
-      )
-      .to(
         links,
         {
           x: 0,
-          stagger: 1,
+          stagger: 0.02,
         },
         0
       )

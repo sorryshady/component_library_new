@@ -21,7 +21,7 @@ export default Menu
 
 const MenuList = ({ data }) => {
   return (
-    <div key={Math.random()} className={`menu_list_ref ${styles.menu_list}`}>
+    <div className={styles.menu_list}>
       {data.map((item) => {
         return (
           <div key={item.id} className={`link ${styles.menu_list_item}`}>

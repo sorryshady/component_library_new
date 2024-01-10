@@ -1,26 +1,36 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './Landing.module.scss'
 import Image from 'next/image'
 import { sectionData } from './section_data'
 import Menu from '../Menu/Menu'
 const Landing = () => {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [open, setOpen] = useState(false)
+  const mainRef = useRef(null)
 
   const handleHover = (index) => {
     setActiveIndex(index)
   }
+  const handleMenuOpen = () => {
+    setOpen(!open)
+  }
+
   return (
     <>
-      <Menu />
-      <div className={styles.main}>
+      <Menu
+        menuOpen={open}
+        handleMenu={handleMenuOpen}
+        mainContainerRef={mainRef}
+      />
+      <div className={styles.main} ref={mainRef}>
         <div className={styles.section}>
           <div className={styles.section_header}>
             <div>
               <div>ArchitExpanse</div>
               <div className='--desktop'></div>
               <div className='--desktop'></div>
-              <div className={styles.menu_open}>
+              <div className={styles.menu_open} onClick={handleMenuOpen}>
                 <p>&#x2014;</p>
                 <p>&#x2014;</p>
               </div>

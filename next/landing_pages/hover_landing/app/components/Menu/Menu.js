@@ -7,17 +7,11 @@ const Menu = ({ menuOpen, handleMenu, mainContainerRef }) => {
   const tl = useRef()
 
   useEffect(() => {
-    const menuContainer = gsap.utils.toArray('.menu_list_ref')
-    const anchors = gsap.utils.toArray('.menu_list_item_ref')
+    const menuList = gsap.utils.toArray('.menu_list_ref')
+    const links = gsap.utils.toArray('.link')
 
     gsap.set(menu.current, { pointerEvents: 'none', autoAlpha: 0 })
-    menuContainer.forEach((item) => {
-      gsap.set(item, { autoAlpha: 0 })
-    })
-    anchors.forEach((item) => {
-      gsap.set(item, { x: '-100%' })
-    })
-
+    gsap.set(links, { color: 'red' })
     tl.current = gsap.timeline({
       paused: true,
       defaults: {
@@ -26,31 +20,15 @@ const Menu = ({ menuOpen, handleMenu, mainContainerRef }) => {
       },
     })
 
-    tl.current
-      .to(
-        menu.current,
-        {
-          autoAlpha: 1,
-          stagger: 0.02,
-          pointerEvents: 'auto',
-        },
-        0
-      )
-      .to(
-        menuContainer,
-        {
-          autoAlpha: 1,
-        },
-        0.08
-      )
-      .to(
-        anchors,
-        {
-          x: 0,
-          stagger: 0.016,
-        },
-        0
-      )
+    tl.current.to(
+      menu.current,
+      {
+        autoAlpha: 1,
+        stagger: 0.02,
+        pointerEvents: 'auto',
+      },
+      0
+    )
 
     tl.current
       .to(
@@ -103,10 +81,7 @@ const MenuList = ({ data }) => {
     <>
       {data.map((item) => {
         return (
-          <div
-            key={item.id}
-            className={`menu_list_item_ref ${styles.menu_list_item}`}
-          >
+          <div key={item.id} className={`link ${styles.menu_list_item}`}>
             <a href={item.link}>{item.title}</a>
           </div>
         )

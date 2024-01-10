@@ -1,0 +1,86 @@
+.menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 50rem;
+  height: 100svh;
+  z-index: -1;
+
+  .menu_wrapper {
+    padding: 12.8rem 4rem 4rem 4rem;
+    height: inherit;
+    columns: var(--primary);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .menu_list {
+      counter-reset: menu-list;
+
+      &::before {
+        position: relative;
+        font-size: 2rem;
+        opacity: 0.5;
+        display: inline-block;
+        margin-bottom: 0.8rem;
+        color: var(--primary);
+      }
+
+      &:nth-child(1)::before {
+        content: 'Sitemap';
+      }
+      &:nth-child(2)::before {
+        content: 'Featured Works';
+      }
+      &:nth-child(3)::before {
+        content: 'Follow Us';
+      }
+
+      .menu_list_item {
+        position: relative;
+        width: fit-content;
+        opacity: 0.5;
+        transition: opacity 0.15s ease-in;
+        cursor: pointer !important;
+
+        a {
+          font-family: inherit;
+          display: block;
+          color: var(--primary);
+          font-size: 4rem;
+          text-decoration: none;
+          text-transform: uppercase;
+          line-height: 1.2;
+
+          @media (max-width: 768px) {
+            font-size: 6rem;
+          }
+        }
+        
+        &:nth-child(3) .menu_list_item {
+          a {
+            font-size: 2.8rem;
+          }
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        .menu_list_item {
+          &::after {
+            counter-increment: menu-list;
+            content: '0' counter(menu-list);
+            position: absolute;
+            bottom: 1rem;
+            right: -2rem;
+            color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+}

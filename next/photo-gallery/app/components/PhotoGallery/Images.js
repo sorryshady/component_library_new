@@ -1,0 +1,98 @@
+export const imagesData = [
+  {
+    path: '/photographyPage/image1.jpg',
+    dominantColor: '#345678',
+    id: 1,
+    imageName: 'Image Name 1',
+  },
+  {
+    path: '/photographyPage/image2.jpg',
+    dominantColor: '#bcd901',
+    id: 2,
+    imageName: 'Image Name 2',
+  },
+  {
+    path: '/photographyPage/image3.jpg',
+    dominantColor: '#890123',
+    id: 3,
+    imageName: 'Image Name 3',
+  },
+  {
+    path: '/photographyPage/image4.jpg',
+    dominantColor: '#234567',
+    id: 4,
+    imageName: 'Image Name 4',
+  },
+  {
+    path: '/photographyPage/image5.jpg',
+    dominantColor: '#901234',
+    id: 5,
+    imageName: 'Image Name 5',
+  },
+  {
+    path: '/photographyPage/image6.jpg',
+    dominantColor: '#567890',
+    id: 6,
+    imageName: 'Image Name 6',
+  },
+  {
+    path: '/photographyPage/image7.jpg',
+    dominantColor: '#012345',
+    id: 7,
+    imageName: 'Image Name 7',
+  },
+  {
+    path: '/photographyPage/image8.jpg',
+    dominantColor: '#6D28CF',
+    id: 8,
+    imageName: 'Image Name 8',
+  },
+  {
+    path: '/photographyPage/image1.jpg',
+    dominantColor: '#345678',
+    id: 9,
+    imageName: 'Image Name 9',
+  },
+  {
+    path: '/photographyPage/image2.jpg',
+    dominantColor: '#bcd901',
+    id: 10,
+    imageName: 'Image Name 10',
+  },
+  {
+    path: '/photographyPage/image3.jpg',
+    dominantColor: '#890123',
+    id: 11,
+    imageName: 'Image Name 11',
+  },
+  {
+    path: '/photographyPage/image4.jpg',
+    dominantColor: '#234567',
+    id: 12,
+    imageName: 'Image Name 12',
+  },
+  {
+    path: '/photographyPage/image5.jpg',
+    dominantColor: '#901234',
+    id: 13,
+    imageName: 'Image Name 13',
+  },
+  {
+    path: '/photographyPage/image6.jpg',
+    dominantColor: '#567890',
+    id: 14,
+    imageName: 'Image Name 14',
+  },
+  {
+    path: '/photographyPage/image7.jpg',
+    dominantColor: '#012345',
+    id: 15,
+    imageName: 'Image Name 15',
+  },
+  {
+    path: '/photographyPage/image8.jpg',
+    dominantColor: '#6D28CF',
+    id: 16,
+    imageName: 'Image Name 16',
+  },
+]

@@ -10,7 +10,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 6rem 0;
-  /* clip-path: polygon(0 100%,100% 100%, 100% 100%, 0% 100%); */
+  pointer-events: none;
+  clip-path: polygon(0 100%,100% 100%, 100% 100%, 0% 100%);
 }
 .img_modal .img {
   position: absolute;
@@ -19,7 +20,7 @@
   transform: translate(-50%, -50%);
   width: 400px;
   height: 500px;
-  /* clip-path: polygon(0 100%,100% 100%, 100% 100%, 0% 100%); */
+  clip-path: polygon(0 100%,100% 100%, 100% 100%, 0% 100%);
 }
 .img_modal .img img {
   width: 100%;

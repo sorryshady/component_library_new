@@ -1,11 +1,14 @@
 .container {
-  width: 90%;
-  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   padding: 5rem 0;
   min-height: 100svh;
+  z-index: 1;
+  /* background-color: rgb(240, 246, 255); */
 }
 .gallery {
+  max-width: 1400px;
+  margin: 0 auto;
   height: 100%;
   width: 100%;
   display: flex;
@@ -17,8 +20,8 @@
 .gallery_item{
   width: 30%;
   height: fit-content;
-  /* border: 1px solid rgba(255,255,255,0.125); */
-  border: 1px solid black;
+  border: 1px solid rgba(255,255,255,0.125);
+  /* border: 1px solid black; */
   padding: 1rem;
   cursor: pointer;
 }

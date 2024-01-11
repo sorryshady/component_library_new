@@ -49,6 +49,9 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
   .gallery_item{
     width: 45%;
   }

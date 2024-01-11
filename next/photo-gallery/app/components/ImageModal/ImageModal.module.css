@@ -1,8 +1,9 @@
 .img_modal {
   position: fixed;
   top: 0;
+  bottom: 0;
   width: 100vw;
-  height: 100svh;
+  min-height: 100svh;
   background: #090909;
   color: #fff;
   display: flex;
@@ -51,3 +52,7 @@
 .close_btn {
   cursor: pointer;
 }
+
+/* @media (max-width: 768px) {
+  
+} */

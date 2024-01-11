@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { sectionData } from './section_data'
 import Menu from '../Menu/Menu'
 const Landing = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(null)
   const [toggle, setToggle] = useState(false)
   const menuRef = useRef(null)
   const landing = useRef(null)
@@ -15,6 +15,9 @@ const Landing = () => {
   useEffect(() => {
     const menu = menuRef.current
     const links = gsap.utils.toArray('.link')
+    if (window.innerWidth > 768) {
+      setActiveIndex(0)
+    }
 
     gsap.set(landing.current, { x: 0 })
 
@@ -71,7 +74,9 @@ const Landing = () => {
   }, [toggle])
 
   const handleHover = (index) => {
-    setActiveIndex(index)
+    if (window.innerWidth > 768) {
+      setActiveIndex(index)
+    }
   }
 
   return (

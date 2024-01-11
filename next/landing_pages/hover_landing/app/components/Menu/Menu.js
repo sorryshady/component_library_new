@@ -6,8 +6,8 @@ const Menu = ({ handleOpen, menuRef }) => {
   return (
     <div className={styles.menu} ref={menuRef}>
       <div className={styles.menu_wrapper}>
-        {menuData.map((data) => {
-          return <MenuList key={Math.random()} data={data} />
+        {menuData.map((data, index) => {
+          return <MenuList key={index} data={data} />
         })}
         <div className='menu_close' onClick={() => handleOpen(false)}>
           <p>&#10005;</p>

@@ -17,7 +17,7 @@ const Landing = () => {
     const links = gsap.utils.toArray('.link')
 
     gsap.set(landing.current, { x: 0 })
-    gsap.set(menu, { pointerEvents: 'none', autoAlpha: 0 })
+
     gsap.set(links, { x: '-100%' })
 
     tl.current = gsap.timeline({
@@ -80,12 +80,18 @@ const Landing = () => {
       <div className={styles.main} ref={landing}>
         <div className={styles.section}>
           <div className={styles.section_header}>
-            <div className='header'>
-              <div>ArchitExpanse</div>
-              <div className='--desktop'></div>
-              <div className='--desktop'></div>
+            <div className={`header ${styles.section_header_list}`}>
+              <div className={styles.section_header_list_item}>
+                ArchitExpanse
+              </div>
               <div
-                className={`btn_open ${styles.menu_open}`}
+                className={`--desktop ${styles.section_header_list_item}`}
+              ></div>
+              <div
+                className={`--desktop ${styles.section_header_list_item}`}
+              ></div>
+              <div
+                className={`btn_open ${styles.menu_open} ${styles.section_header_list_item}`}
                 onClick={() => setToggle(true)}
               >
                 <p>&#x2014;</p>
@@ -128,10 +134,10 @@ const Section = ({
   }
   return (
     <div
-      className={`${styles.col} ${isActive ? styles.active : ''}`}
+      className={`${styles.section_col} ${isActive ? styles.active : ''}`}
       onMouseEnter={hoverHandler}
     >
-      <div className={styles.col_media}>
+      <div className={styles.section_col_media}>
         <Image
           src={image}
           alt=''
@@ -139,16 +145,17 @@ const Section = ({
           height={100}
           unoptimized={true}
           priority
+          className={styles.section_col_image}
         />
       </div>
-      <div className={`${styles.col_caption} --desktop`}>
+      <div className={`${styles.section_col_caption} --desktop`}>
         <span>{caption}</span>
       </div>
-      <div className={styles.col_title}>
+      <div className={styles.section_col_title}>
         <h2>{title}</h2>
         <p className='--mobile'>Discover more &rarr;</p>
       </div>
-      <div className={styles.col_number}>
+      <div className={styles.section_col_number}>
         <h1>{number}</h1>
       </div>
     </div>

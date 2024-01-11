@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'Primary';
+  src: url('./fonts/rader-regular-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Primary';
+  background-color: #0f0f0f;
+  color: #fff;
+  text-transform: uppercase;
+}
+h1 {
+  font-weight: 500;
+  margin: 4em 50px 2em 50px;
+}
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: gray;
+}
+img {
+  width: 100%;
+  object-fit: cover;
+}
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10em;
+}
+.item {
+  width: calc(12.5% - 20px);
+  height: 200px;
+  border: 1px solid rgba(255,255,255,0.125);
+  overflow: hidden;
+  padding: 15px;
+  cursor: pointer;
+}
+.item_img {
+  margin-bottom: 10px;
+  height: calc(100% - 40px);
+  overflow: hidden;
+}
+.item_name {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .item {
+    width: calc(50% - 5px);
+  }
+}
+
+.img_modal {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100svh;
+  background: #090909;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6em 0;
+  pointer-events: none;
+  clip-path: polygon(0 100%,100% 100%, 100% 100%, 0% 100%);
+}
+.img_modal .img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 500px;
+  clip-path: polygon(0 100%,100% 100%, 100% 100%, 0% 100%);
+}
+.img_modal .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.modal_item {
+  position: relative;
+  width: max-content;
+  height: max-content;
+}
+.modal_item p {
+  position: relative;
+  font-size: 14px;
+  color: #fff;
+  top: 15px;
+}
+.modal_item_revealer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal_item_revealer::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  height: 100%;
+  background: #090909;
+}
+.close_btn {
+  cursor: pointer;
+}

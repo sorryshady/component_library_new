@@ -75,10 +75,7 @@ const PhotoGallery = () => {
 
   return (
     <>
-      <div
-        className={styles.container}
-        style={{ backgroundColor: bgColor, filter: 'brightness(80%)' }}
-      >
+      <div className={styles.container}>
         <div className={styles.gallery}>
           {imagesData.map((image) => (
             <ImageCard
@@ -96,6 +93,15 @@ const PhotoGallery = () => {
         handleToggle={setToggle}
         modalRef={modalRef}
       />
+      <div
+        className={styles.background}
+        style={{
+          background: `linear-gradient(180deg, #0f0f0f , ${
+            bgColor || '#0f0f0f'
+          } )`,
+          filter: 'brightness(80%)',
+        }}
+      ></div>
     </>
   )
 }
@@ -139,3 +145,4 @@ const ImageCard = ({
     </div>
   )
 }
+        

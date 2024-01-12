@@ -7,7 +7,12 @@ const ImageModal = ({ imageInfo, handleToggle, modalRef }) => {
     <div
       className={styles.img_modal}
       ref={modalRef}
-      style={{ backgroundColor: imageInfo.color }}
+      style={{
+        background: `linear-gradient(180deg, #0f0f0f , ${
+          imageInfo.color || '#0f0f0f'
+        } )`,
+        filter: 'brightness(80%)',
+      }}
     >
       <div className={`${styles.modal_item} ${styles.img_name} item`}>
         <p>{imageInfo.imageName}</p>

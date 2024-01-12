@@ -49,8 +49,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  width: 100vw;
+  height: 100svh;
   z-index: -1;
 }
 @media (max-width: 768px) {
@@ -59,6 +59,10 @@
   }
   .gallery_item{
     width: 45%;
+  }
+  .background {
+    width: 100vw;
+    height: 110%;
   }
 }
 @media (max-width: 425px) {

@@ -9,3 +9,8 @@ html, body {
   color: #fff;
   text-transform: uppercase;
 }
+@media (max-width: 768px){
+  html, body {
+    background-color: #0f0f0f;
+  }
+}

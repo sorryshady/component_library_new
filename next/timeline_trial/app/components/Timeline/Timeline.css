@@ -1,0 +1,71 @@
+.spacer {
+	width:100%;
+	height:50vh;
+	background:#ddd;
+}
+.container {
+  width: 100vw;
+  
+}
+.timeline {
+  max-width: 1400px;
+  margin:  auto;
+  display: flex;
+}
+
+.years {
+  width: 25%;
+  height: 100svh;
+  display:flex;
+	flex-direction:column;
+	justify-content:center;
+  gap: 5rem;
+}
+.year {
+  margin: 0 auto;
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0.5;
+}
+.active {
+  opacity: 1;
+}
+.achievements {
+  width: 75%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.achievement {
+  min-height: calc(100svh - 10px);
+  position: relative;
+  margin: auto;
+  /* top: -50px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px){
+  .year {
+    font-size: 2.5rem;
+  }
+  .achievement {
+    font-size: 3.5rem;
+  }
+
+}
+@media (max-width: 425px){
+  .year {
+    font-size: 2rem;
+  }
+  .achievement {
+    font-size: 3rem;
+  }
+
+}
+

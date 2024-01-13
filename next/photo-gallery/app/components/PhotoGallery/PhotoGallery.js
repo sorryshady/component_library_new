@@ -128,14 +128,7 @@ const ImageCard = ({
       onMouseEnter={() => handleHover(dominantColor)}
     >
       <div className={styles.gallery_item_img}>
-        <Image
-          src={path}
-          alt=''
-          width={100}
-          height={100}
-          unoptimized={true}
-          priority
-        />
+        <Image src={path} alt={imageName} width={500} height={500} priority />
       </div>
       <div className={styles.gallery_item_name}>
         <p>{imageName}</p>

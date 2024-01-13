@@ -19,11 +19,10 @@ const ImageModal = ({ imageInfo, handleToggle, modalRef }) => {
       </div>
       <div className={`image ${styles.img}`}>
         <Image
-          src={imageInfo.src || '/photographyPage/image1.jpg'}
-          width='300'
-          height='300'
-          alt=''
-          unoptimized={true}
+          src={imageInfo.src || '/images/image1.webp'}
+          alt={imageInfo.imageName}
+          width={500}
+          height={500}
           priority
         />
       </div>

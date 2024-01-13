@@ -23,6 +23,8 @@ const ImageModal = ({ imageInfo, handleToggle, modalRef }) => {
           alt={imageInfo.imageName}
           width={500}
           height={500}
+          quality={100}
+          unoptimized={false}
           priority
         />
       </div>
